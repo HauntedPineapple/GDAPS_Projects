@@ -10,6 +10,7 @@ namespace HW4_InventorySystem
     {
         static void Main(string[] args)
         {
+            Console.ReadLine();
         }
     }
 }
