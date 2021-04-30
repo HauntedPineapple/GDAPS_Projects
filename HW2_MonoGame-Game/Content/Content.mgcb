@@ -212,13 +212,6 @@
 /processorParam:TextureFormat=Compressed
 /build:myFont.spritefont
 
-#begin newFont.spritefont
-/importer:FontDescriptionImporter
-/processor:FontDescriptionProcessor
-/processorParam:PremultiplyAlpha=True
-/processorParam:TextureFormat=Compressed
-/build:newFont.spritefont
-
 #begin pkmnTrainer.png
 /importer:TextureImporter
 /processor:TextureProcessor
