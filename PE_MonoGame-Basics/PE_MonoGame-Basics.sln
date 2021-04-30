@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31205.134
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PE_MonoGame-Basics", "PE_MonoGame-Basics.csproj", "{A3570115-ADB3-4451-B317-0E669EA2B071}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A3570115-ADB3-4451-B317-0E669EA2B071}.Debug|x86.ActiveCfg = Debug|x86
+		{A3570115-ADB3-4451-B317-0E669EA2B071}.Debug|x86.Build.0 = Debug|x86
+		{A3570115-ADB3-4451-B317-0E669EA2B071}.Release|x86.ActiveCfg = Release|x86
+		{A3570115-ADB3-4451-B317-0E669EA2B071}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2FEF649B-52BD-44D1-9DAF-6BFA5946AAD4}
+	EndGlobalSection
+EndGlobal

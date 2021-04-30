@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31205.134
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HW3_QuadTrees", "HW3_QuadTrees.csproj", "{8C4BD5AF-2A39-4626-A068-7E45C0305380}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8C4BD5AF-2A39-4626-A068-7E45C0305380}.Debug|x86.ActiveCfg = Debug|x86
+		{8C4BD5AF-2A39-4626-A068-7E45C0305380}.Debug|x86.Build.0 = Debug|x86
+		{8C4BD5AF-2A39-4626-A068-7E45C0305380}.Release|x86.ActiveCfg = Release|x86
+		{8C4BD5AF-2A39-4626-A068-7E45C0305380}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B1C942A9-E29F-4FB3-8ED5-7128498DC280}
+	EndGlobalSection
+EndGlobal
