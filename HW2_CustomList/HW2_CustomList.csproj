@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{0D2D89E8-CA0A-4673-AD45-762C4A34B109}</ProjectGuid>
+    <ProjectGuid>{7BC69797-5528-4CC1-8D7F-4758ADDD8FC1}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>HW_5_CustomDictionary</RootNamespace>
-    <AssemblyName>HW_5-CustomDictionary</AssemblyName>
+    <RootNamespace>HW2_CustomList</RootNamespace>
+    <AssemblyName>HW2_CustomList</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

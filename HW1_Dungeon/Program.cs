@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HW_5_CustomDictionary
+namespace HW1_Dungeon
 {
     class Program
     {

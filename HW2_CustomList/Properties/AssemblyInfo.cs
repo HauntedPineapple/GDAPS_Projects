@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("HW_5-CustomDictionary")]
+[assembly: AssemblyTitle("HW2_CustomList")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("HP Inc.")]
-[assembly: AssemblyProduct("HW_5-CustomDictionary")]
+[assembly: AssemblyProduct("HW2_CustomList")]
 [assembly: AssemblyCopyright("Copyright © HP Inc. 2021")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("0d2d89e8-ca0a-4673-ad45-762c4a34b109")]
+[assembly: Guid("7bc69797-5528-4cc1-8d7f-4758addd8fc1")]
 
 // Version information for an assembly consists of the following four values:
 //
