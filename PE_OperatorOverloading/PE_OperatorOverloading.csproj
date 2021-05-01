@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{58570FF4-4044-430B-A511-D045EEDA9221}</ProjectGuid>
+    <ProjectGuid>{3F53BDFC-8A57-49B3-9A71-C92285F4CBF1}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>HW1_Dungeon</RootNamespace>
-    <AssemblyName>HW1_Dungeon</AssemblyName>
+    <RootNamespace>PE_OperatorOverloading</RootNamespace>
+    <AssemblyName>PE_OperatorOverloading</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,9 +43,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Dungeon.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Vector2.cs" />
+    <Compile Include="Vector3.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
