@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace HW5_CustomDictionary
 {
-    class Program
+    class CustomDictionary <keyType, valueType>
     {
-        static void Main(string[] args)
+        public CustomDictionary()
         {
-            Console.ReadLine();
+
         }
     }
 }
