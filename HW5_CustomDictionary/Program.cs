@@ -46,8 +46,8 @@ namespace HW5_CustomDictionary
                 validInput = false;
                 Console.WriteLine("Commands: ");
                 Console.WriteLine("- Count   - Add   - Remove   - Get");
-                Console.WriteLine("- Set   - Clear   - Print   - Quit");
-                Console.WriteLine("- Set   - Clear   - Print   - Quit");
+                Console.WriteLine("- Set   - Clear   - Print   - ContainsKey");
+                Console.WriteLine("- ContainsValue   - Clear   - Print   - Quit");
                 Console.Write("Enter a command: ");
                 userInput = Console.ReadLine();
 

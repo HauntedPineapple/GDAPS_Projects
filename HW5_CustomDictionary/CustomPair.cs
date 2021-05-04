@@ -6,23 +6,23 @@ using System.Threading.Tasks;
 
 namespace HW5_CustomDictionary
 {
-    class CustomPair<keyType, valueType>
+    class CustomPair<TKey, TValue>
     {
-        private keyType key;
-        private valueType value;
+        private TKey key;
+        private TValue value;
 
-        public keyType Key
+        public TKey Key
         {
             get { return key; }
             set { key = value; }
         }
-        public valueType Value
+        public TValue Value
         {
             get { return value; }
             set { this.value = value; }
         }
 
-        public CustomPair(keyType key, valueType value)
+        public CustomPair(TKey key, TValue value)
         {
             this.key = key;
             this.value = value;
