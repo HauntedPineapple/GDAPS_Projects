@@ -28,26 +28,35 @@ namespace HW5_CustomDictionary
 
         static void Main(string[] args)
         {
+            DefaultTest();
+            //CustomTest();
+
+            Console.ReadLine();
+        }
+
+        static void DefaultTest()
+        {
             bool isUsing = true;
             bool validInput = false;
-            string userInput = "";
+            string userInput, newKey, newValue;
 
             Dictionary<string, string> dictionary = new Dictionary<string, string>();
             dictionary.Add("Chester", "Dog");
             dictionary.Add("Mei Mei", "Cat");
             dictionary.Add("Poppy", "Rat");
-            dictionary.Add("Cheyenne", "Horse");
-            dictionary.Add("Georgie", "Snake");
-            dictionary.Add("Gonzo", "Bird");
+            dictionary["Cheyenne"] = "Horse";
+            dictionary["Georgie"] = "Snake";
+            dictionary["Gonzo"] = "Bird";
 
+            Console.WriteLine("Commands: ");
+            Console.WriteLine("- Count   - Add   - Remove   - Get");
+            Console.WriteLine("- Set   - Clear   - Print");
+            Console.WriteLine("- Help   - Quit");
 
             while (isUsing)
             {
                 validInput = false;
-                Console.WriteLine("Commands: ");
-                Console.WriteLine("- Count   - Add   - Remove   - Get");
-                Console.WriteLine("- Set   - Clear   - Print   - ContainsKey");
-                Console.WriteLine("- ContainsValue   - Clear   - Print   - Quit");
+
                 Console.Write("Enter a command: ");
                 userInput = Console.ReadLine();
 
@@ -62,21 +71,42 @@ namespace HW5_CustomDictionary
                         Console.WriteLine("Dictionary Contents: ");
                         foreach (var item in dictionary)
                         {
-                            Console.Write("Key: " + item.Key + " Value: " + item.Value + "\n");
+                            Console.Write("Key: " + item.Key + "\tValue: " + item.Value + "\n");
                         }
                         break;
 
                     case "count":
-                        Console.WriteLine("");
+                        Console.WriteLine(dictionary.Count);
                         break;
 
                     case "add":
-                        Console.Write("Please enter the word you wish to add: ");
-                        userInput = Console.ReadLine();
+                        Console.Write("Please enter the new key: ");
+                        newKey = Console.ReadLine();
+
+                        if (dictionary.ContainsKey(newKey))
+                        {
+                            Console.ForegroundColor = ConsoleColor.Red;
+                            Console.WriteLine("ERROR: The dictionary already contains the key " + newKey);
+                            Console.ForegroundColor = ConsoleColor.Gray;
+                            break;
+                        }
+
+                        Console.Write("Please enter the new value: ");
+                        newValue = Console.ReadLine();
+                        try
+                        {
+                            dictionary.Add(newKey, newValue);
+                        }
+                        catch (Exception e)
+                        {
+                            Console.ForegroundColor = ConsoleColor.Red;
+                            Console.WriteLine("ERROR: " + e.Message);
+                            Console.ForegroundColor = ConsoleColor.Gray;
+                        }
                         break;
 
                     case "remove":
-                        Console.Write("Please enter the word you wish to remove: ");
+                        Console.Write("Please enter the key of the entry you wish to remove: ");
                         userInput = Console.ReadLine();
 
                         if (dictionary.ContainsKey(userInput))
@@ -84,10 +114,10 @@ namespace HW5_CustomDictionary
                             dictionary.Remove(userInput);
                             Console.WriteLine("Removed " + userInput + " from the list.");
                         }
-                        //else
+                        else
                         {
                             Console.ForegroundColor = ConsoleColor.Red;
-                            Console.WriteLine("ERROR: The list does not contain the word " + userInput);
+                            Console.WriteLine("ERROR: The dictionary does not contain the key " + userInput);
                             Console.ForegroundColor = ConsoleColor.Gray;
                         }
                         break;
@@ -98,11 +128,44 @@ namespace HW5_CustomDictionary
                         break;
 
                     case "get":
-                        Console.WriteLine("");
+                        Console.Write("Please enter the key you wish to retrieve: ");
+                        userInput = Console.ReadLine();
+                        if (dictionary.ContainsKey(userInput))
+                        {
+                            Console.WriteLine("Value is: " + dictionary[userInput]);
+                        }
+                        else
+                        {
+                            Console.ForegroundColor = ConsoleColor.Red;
+                            Console.WriteLine("ERROR: The dictionary does not contain the key " + userInput);
+                            Console.ForegroundColor = ConsoleColor.Gray;
+                        }
                         break;
 
                     case "set":
-                        Console.WriteLine("");
+                        Console.Write("Please enter the key: ");
+                        userInput = Console.ReadLine();
+
+                        Console.Write("Please enter the new value: ");
+                        newValue = Console.ReadLine();
+
+                        try
+                        {
+                            dictionary[userInput] = newValue;
+                        }
+                        catch (Exception e)
+                        {
+                            Console.ForegroundColor = ConsoleColor.Red;
+                            Console.WriteLine("ERROR: " + e.Message);
+                            Console.ForegroundColor = ConsoleColor.Gray;
+                        }
+                        break;
+
+                    case "help":
+                        Console.WriteLine("Commands: ");
+                        Console.WriteLine("- Count   - Add   - Remove   - Get");
+                        Console.WriteLine("- Set   - Clear   - Print   - ContainsKey");
+                        Console.WriteLine("- ContainsValue   - Help   - Quit");
                         break;
 
                     default:
@@ -113,8 +176,152 @@ namespace HW5_CustomDictionary
                 }
                 Console.WriteLine();
             }
-
-            Console.ReadLine();
         }
+
+        static void CustomTest()
+        {
+            bool isUsing = true;
+            bool validInput = false;
+            string userInput, newKey, newValue;
+
+            CustomDictionary<string, string> dictionary = new CustomDictionary<string, string>();
+            dictionary.Add("Chester", "Dog");
+            dictionary.Add("Mei Mei", "Cat");
+            dictionary.Add("Poppy", "Rat");
+            dictionary["Cheyenne"] = "Horse";
+            dictionary["Georgie"] = "Snake";
+            dictionary["Gonzo"] = "Bird";
+
+            Console.WriteLine("Commands: ");
+            Console.WriteLine("- Count   - Add   - Remove   - Get");
+            Console.WriteLine("- Set   - Clear   - Print");
+            Console.WriteLine("- Help   - Quit");
+
+            while (isUsing)
+            {
+                validInput = false;
+
+                Console.Write("Enter a command: ");
+                userInput = Console.ReadLine();
+
+                switch (userInput.ToLower())
+                {
+                    case "quit":
+                        Console.WriteLine("Goodbye!");
+                        isUsing = false;
+                        break;
+
+                    case "print":
+                        //Console.WriteLine("Dictionary Contents: ");
+                        //foreach (var item in dictionary)
+                        //{
+                        //    Console.Write("Key: " + item.Key + "\tValue: " + item.Value + "\n");
+                        //}
+                        break;
+
+                    case "count":
+                        Console.WriteLine(dictionary.Count);
+                        break;
+
+                    case "add":
+                        Console.Write("Please enter the new key: ");
+                        newKey = Console.ReadLine();
+
+                        if (dictionary.ContainsKey(newKey))
+                        {
+                            Console.ForegroundColor = ConsoleColor.Red;
+                            Console.WriteLine("ERROR: The dictionary already contains the key " + newKey);
+                            Console.ForegroundColor = ConsoleColor.Gray;
+                            break;
+                        }
+
+                        Console.Write("Please enter the new value: ");
+                        newValue = Console.ReadLine();
+                        try
+                        {
+                            dictionary.Add(newKey, newValue);
+                        }
+                        catch (Exception e)
+                        {
+                            Console.ForegroundColor = ConsoleColor.Red;
+                            Console.WriteLine("ERROR: " + e.Message);
+                            Console.ForegroundColor = ConsoleColor.Gray;
+                        }
+                        break;
+
+                    case "remove":
+                        Console.Write("Please enter the key of the entry you wish to remove: ");
+                        userInput = Console.ReadLine();
+
+                        if (dictionary.ContainsKey(userInput))
+                        {
+                            dictionary.Remove(userInput);
+                            Console.WriteLine("Removed " + userInput + " from the list.");
+                        }
+                        else
+                        {
+                            Console.ForegroundColor = ConsoleColor.Red;
+                            Console.WriteLine("ERROR: The dictionary does not contain the key " + userInput);
+                            Console.ForegroundColor = ConsoleColor.Gray;
+                        }
+                        break;
+
+                    case "clear":
+                        Console.WriteLine("Cleared Dictionary");
+                        dictionary.Clear();
+                        break;
+
+                    case "get":
+                        Console.Write("Please enter the key you wish to retrieve: ");
+                        userInput = Console.ReadLine();
+                        if (dictionary.ContainsKey(userInput))
+                        {
+                            Console.WriteLine("Value is: " + dictionary[userInput]);
+                        }
+                        else
+                        {
+                            Console.ForegroundColor = ConsoleColor.Red;
+                            Console.WriteLine("ERROR: The dictionary does not contain the key " + userInput);
+                            Console.ForegroundColor = ConsoleColor.Gray;
+                        }
+                        break;
+
+                    case "set":
+                        Console.Write("Please enter the key: ");
+                        userInput = Console.ReadLine();
+
+                        Console.Write("Please enter the new value: ");
+                        newValue = Console.ReadLine();
+
+                        try
+                        {
+                            dictionary[userInput] = newValue;
+                        }
+                        catch (Exception e)
+                        {
+                            Console.ForegroundColor = ConsoleColor.Red;
+                            Console.WriteLine("ERROR: " + e.Message);
+                            Console.ForegroundColor = ConsoleColor.Gray;
+                        }
+                        break;
+
+                    case "help":
+                        Console.WriteLine("Commands: ");
+                        Console.WriteLine("- Count   - Add   - Remove   - Get");
+                        Console.WriteLine("- Set   - Clear   - Print   - ContainsKey");
+                        Console.WriteLine("- ContainsValue   - Help   - Quit");
+                        break;
+
+                    default:
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Console.WriteLine("ERROR: Command not recognized!");
+                        Console.ForegroundColor = ConsoleColor.Gray;
+                        break;
+                }
+                Console.WriteLine();
+            }
+        }
+
     }
 }
+
