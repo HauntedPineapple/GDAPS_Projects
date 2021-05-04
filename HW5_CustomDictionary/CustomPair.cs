@@ -6,11 +6,26 @@ using System.Threading.Tasks;
 
 namespace HW5_CustomDictionary
 {
-    class CustomPair <keyType, valueType>
+    class CustomPair<keyType, valueType>
     {
-        public CustomPair()
-        {
+        private keyType key;
+        private valueType value;
 
+        public keyType Key
+        {
+            get { return key; }
+            set { key = value; }
+        }
+        public valueType Value
+        {
+            get { return value; }
+            set { this.value = value; }
+        }
+
+        public CustomPair(keyType key, valueType value)
+        {
+            this.key = key;
+            this.value = value;
         }
     }
 }
