@@ -28,8 +28,8 @@ namespace HW5_CustomDictionary
 
         static void Main(string[] args)
         {
-            DefaultTest();
-            //CustomTest();
+            //DefaultTest();
+            CustomTest();
 
             Console.ReadLine();
         }
