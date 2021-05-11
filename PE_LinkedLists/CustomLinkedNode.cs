@@ -17,6 +17,7 @@ namespace PE_LinkedLists
         public CustomLinkedNode(T data)
         {
             this.data = data;
+            next = null;
         }
     }
 }
