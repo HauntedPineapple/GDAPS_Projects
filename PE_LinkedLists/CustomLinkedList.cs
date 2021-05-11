@@ -6,11 +6,10 @@ using System.Threading.Tasks;
 
 namespace PE_LinkedLists
 {
-    class Program
+    class CustomLinkedList <T>
     {
-        static void Main(string[] args)
-        {
-            Console.ReadLine();
-        }
+        private int count;
+
+        public int Count { get { return count; } }
     }
 }
