@@ -33,11 +33,7 @@ namespace HW2_CustomList
             }
         }
 
-        public CustomList()
-        {
-            array = new T[4];
-            count = 0;
-        }
+        public CustomList() : this(4) { }
         public CustomList(int size)
         {
             array = new T[size];
@@ -91,10 +87,19 @@ namespace HW2_CustomList
 
         public void RemoveAt(int index)
         {
-            if (index >= count)
+            if (index >= count || index < 0)
             {
                 return;
             }
+
+            T[] values = new T[Capacity - index - 1];
+            int temp = 0;
+            for (int i = index + 1; i < count; i++)
+            {
+                values[temp] = array[i];
+                temp++;
+            }
+
             count--;
         }
 
@@ -104,9 +109,13 @@ namespace HW2_CustomList
             {
                 return false;
             }
-            count--;
+
+            int index = IndexOf(item);
+            RemoveAt(index);
+
             return true;
         }
+
         public void Insert(int index, T item)
         {
             if (index < 0)
@@ -118,11 +127,26 @@ namespace HW2_CustomList
                 Add(item);
                 return;
             }
+            if (count + 1 == Capacity)
+            {
+                T[] oldArray = array;
+                array = new T[Capacity * 2];
+                for (int i = 0; i < oldArray.Length; i++)
+                {
+                    array[i] = oldArray[i];
+                }
+            }
 
-            
+            for (int i = count + 1; i > index; i--)
+            {
+                array[i] = array[i - 1]; // move values over to next spot in array
+            }
+
+            array[index] = item;
 
             count++;
         }
+
         public void Clear()
         {
             count = 0;
